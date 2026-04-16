@@ -1,0 +1,11 @@
+# 45MB of raw photo pipeline output the curator pulls from — not shipped
+public/images/_unsorted/
+
+# Local dev artifacts
+.next/dev/
+.next/cache/
+
+# Editor / OS cruft
+.DS_Store
+.idea/
+.vscode/

@@ -1,0 +1,23 @@
+{
+  "site": {
+    "legalName": "Epic Storage Solutions LLC",
+    "brand": "Epic Storage NY",
+    "tagline": "Straightforward storage. No gimmicks. No surprise rate hikes.",
+    "description": "Brand-new climate-controlled self storage with 24/7 gated access in Clarence Center and Buffalo, NY. Published prices that stay published — no surprise rate hikes."
+  },
+  "contact": {
+    "phone": "(716) 331-2882",
+    "email": "peteselfstorage@gmail.com"
+  },
+  "hours": {
+    "officeLabel": "By appointment — call (716) 331-2882",
+    "officeDetail": "Our office isn't staffed full-time. Call or email ahead and we'll meet you on site.",
+    "gateLabel": "24/7 gated access for tenants",
+    "gateDetail": "Once you're a customer, you can reach your unit any hour of any day, including weekends and holidays."
+  },
+  "promo": {
+    "headline": "First month 50% off",
+    "terms": "4-month minimum stay required",
+    "details": "Take half off your first month's rent when you commit to a 4-month minimum stay. One offer per customer. Available at both Epic Storage locations while the promotion lasts — see terms."
+  }
+}
