@@ -64,6 +64,10 @@ type Query {
   faqsConnection(before: String, after: String, first: Float, last: Float, sort: String, filter: FaqsFilter): FaqsConnection!
   features(relativePath: String): Features!
   featuresConnection(before: String, after: String, first: Float, last: Float, sort: String, filter: FeaturesFilter): FeaturesConnection!
+  homePage(relativePath: String): HomePage!
+  homePageConnection(before: String, after: String, first: Float, last: Float, sort: String, filter: HomePageFilter): HomePageConnection!
+  aboutPage(relativePath: String): AboutPage!
+  aboutPageConnection(before: String, after: String, first: Float, last: Float, sort: String, filter: AboutPageFilter): AboutPageConnection!
 }
 
 input DocumentFilter {
@@ -72,6 +76,8 @@ input DocumentFilter {
   unitSize: UnitSizeFilter
   faqs: FaqsFilter
   features: FeaturesFilter
+  homePage: HomePageFilter
+  aboutPage: AboutPageFilter
 }
 
 type DocumentConnectionEdges {
@@ -97,7 +103,7 @@ type Collection {
   documents(before: String, after: String, first: Float, last: Float, sort: String, filter: DocumentFilter, folder: String): DocumentConnection!
 }
 
-union DocumentNode = Settings | Location | UnitSize | Faqs | Features | Folder
+union DocumentNode = Settings | Location | UnitSize | Faqs | Features | HomePage | AboutPage | Folder
 
 type SettingsSite {
   legalName: String
@@ -122,6 +128,8 @@ type SettingsPromo {
   headline: String
   terms: String
   details: String
+  eyebrow: String
+  disclaimer: String
 }
 
 type Settings implements Node & Document {
@@ -164,6 +172,8 @@ input SettingsPromoFilter {
   headline: StringFilter
   terms: StringFilter
   details: StringFilter
+  eyebrow: StringFilter
+  disclaimer: StringFilter
 }
 
 input SettingsFilter {
@@ -295,6 +305,15 @@ type FaqsConnection implements Connection {
 }
 
 type Features implements Node & Document {
+  pageHeading: String
+  pageSubheading: String
+  securityIntro: String
+  accessIntro: String
+  convenienceIntro: String
+  cameraHeading: String
+  cameraParagraph1: String
+  cameraParagraph2: String
+  cameraParagraph3: String
   security: [String]
   access: [String]
   convenience: [String]
@@ -304,6 +323,15 @@ type Features implements Node & Document {
 }
 
 input FeaturesFilter {
+  pageHeading: StringFilter
+  pageSubheading: StringFilter
+  securityIntro: StringFilter
+  accessIntro: StringFilter
+  convenienceIntro: StringFilter
+  cameraHeading: StringFilter
+  cameraParagraph1: StringFilter
+  cameraParagraph2: StringFilter
+  cameraParagraph3: StringFilter
   security: StringFilter
   access: StringFilter
   convenience: StringFilter
@@ -318,6 +346,142 @@ type FeaturesConnection implements Connection {
   pageInfo: PageInfo!
   totalCount: Float!
   edges: [FeaturesConnectionEdges]
+}
+
+type HomePageHero {
+  heading: String
+  subheading: String
+  highlights: [String]
+}
+
+type HomePageProofPointsCards {
+  title: String
+  body: String
+}
+
+type HomePageProofPoints {
+  heading: String
+  subheading: String
+  cards: [HomePageProofPointsCards]
+}
+
+type HomePagePricing {
+  heading: String
+  subheading: String
+  footerNote: String
+  smallSubtitle: String
+  smallFits: String
+  mediumSubtitle: String
+  mediumFits: String
+  largeSubtitle: String
+  largeFits: String
+}
+
+type HomePage implements Node & Document {
+  hero: HomePageHero
+  proofPoints: HomePageProofPoints
+  pricing: HomePagePricing
+  id: ID!
+  _sys: SystemInfo!
+  _values: JSON!
+}
+
+input HomePageHeroFilter {
+  heading: StringFilter
+  subheading: StringFilter
+  highlights: StringFilter
+}
+
+input HomePageProofPointsCardsFilter {
+  title: StringFilter
+  body: StringFilter
+}
+
+input HomePageProofPointsFilter {
+  heading: StringFilter
+  subheading: StringFilter
+  cards: HomePageProofPointsCardsFilter
+}
+
+input HomePagePricingFilter {
+  heading: StringFilter
+  subheading: StringFilter
+  footerNote: StringFilter
+  smallSubtitle: StringFilter
+  smallFits: StringFilter
+  mediumSubtitle: StringFilter
+  mediumFits: StringFilter
+  largeSubtitle: StringFilter
+  largeFits: StringFilter
+}
+
+input HomePageFilter {
+  hero: HomePageHeroFilter
+  proofPoints: HomePageProofPointsFilter
+  pricing: HomePagePricingFilter
+}
+
+type HomePageConnectionEdges {
+  cursor: String!
+  node: HomePage
+}
+
+type HomePageConnection implements Connection {
+  pageInfo: PageInfo!
+  totalCount: Float!
+  edges: [HomePageConnectionEdges]
+}
+
+type AboutPageValues {
+  title: String
+  body: String
+}
+
+type AboutPage implements Node & Document {
+  heroHeading: String
+  heroSubheading: String
+  whyHeading: String
+  whyParagraph1: String
+  whyParagraph2: String
+  careHeading: String
+  values: [AboutPageValues]
+  whereHeading: String
+  whereBody: String
+  getInTouchHeading: String
+  getInTouchBody: String
+  id: ID!
+  _sys: SystemInfo!
+  _values: JSON!
+}
+
+input AboutPageValuesFilter {
+  title: StringFilter
+  body: StringFilter
+}
+
+input AboutPageFilter {
+  heroHeading: StringFilter
+  heroSubheading: StringFilter
+  whyHeading: StringFilter
+  whyParagraph1: StringFilter
+  whyParagraph2: StringFilter
+  careHeading: StringFilter
+  values: AboutPageValuesFilter
+  whereHeading: StringFilter
+  whereBody: StringFilter
+  getInTouchHeading: StringFilter
+  getInTouchBody: StringFilter
+}
+
+type AboutPageConnectionEdges {
+  cursor: String!
+  node: AboutPage
+}
+
+type AboutPageConnection implements Connection {
+  pageInfo: PageInfo!
+  totalCount: Float!
+  edges: [AboutPageConnectionEdges]
 }
 
 type Mutation {
@@ -336,6 +500,10 @@ type Mutation {
   createFaqs(relativePath: String!, params: FaqsMutation!): Faqs!
   updateFeatures(relativePath: String!, params: FeaturesMutation!): Features!
   createFeatures(relativePath: String!, params: FeaturesMutation!): Features!
+  updateHomePage(relativePath: String!, params: HomePageMutation!): HomePage!
+  createHomePage(relativePath: String!, params: HomePageMutation!): HomePage!
+  updateAboutPage(relativePath: String!, params: AboutPageMutation!): AboutPage!
+  createAboutPage(relativePath: String!, params: AboutPageMutation!): AboutPage!
 }
 
 input DocumentUpdateMutation {
@@ -344,6 +512,8 @@ input DocumentUpdateMutation {
   unitSize: UnitSizeMutation
   faqs: FaqsMutation
   features: FeaturesMutation
+  homePage: HomePageMutation
+  aboutPage: AboutPageMutation
   relativePath: String
 }
 
@@ -353,6 +523,8 @@ input DocumentMutation {
   unitSize: UnitSizeMutation
   faqs: FaqsMutation
   features: FeaturesMutation
+  homePage: HomePageMutation
+  aboutPage: AboutPageMutation
 }
 
 input SettingsSiteMutation {
@@ -378,6 +550,8 @@ input SettingsPromoMutation {
   headline: String
   terms: String
   details: String
+  eyebrow: String
+  disclaimer: String
 }
 
 input SettingsMutation {
@@ -417,9 +591,72 @@ input FaqsMutation {
 }
 
 input FeaturesMutation {
+  pageHeading: String
+  pageSubheading: String
+  securityIntro: String
+  accessIntro: String
+  convenienceIntro: String
+  cameraHeading: String
+  cameraParagraph1: String
+  cameraParagraph2: String
+  cameraParagraph3: String
   security: [String]
   access: [String]
   convenience: [String]
+}
+
+input HomePageHeroMutation {
+  heading: String
+  subheading: String
+  highlights: [String]
+}
+
+input HomePageProofPointsCardsMutation {
+  title: String
+  body: String
+}
+
+input HomePageProofPointsMutation {
+  heading: String
+  subheading: String
+  cards: [HomePageProofPointsCardsMutation]
+}
+
+input HomePagePricingMutation {
+  heading: String
+  subheading: String
+  footerNote: String
+  smallSubtitle: String
+  smallFits: String
+  mediumSubtitle: String
+  mediumFits: String
+  largeSubtitle: String
+  largeFits: String
+}
+
+input HomePageMutation {
+  hero: HomePageHeroMutation
+  proofPoints: HomePageProofPointsMutation
+  pricing: HomePagePricingMutation
+}
+
+input AboutPageValuesMutation {
+  title: String
+  body: String
+}
+
+input AboutPageMutation {
+  heroHeading: String
+  heroSubheading: String
+  whyHeading: String
+  whyParagraph1: String
+  whyParagraph2: String
+  careHeading: String
+  values: [AboutPageValuesMutation]
+  whereHeading: String
+  whereBody: String
+  getInTouchHeading: String
+  getInTouchBody: String
 }
 
 schema {

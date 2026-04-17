@@ -1,6 +1,6 @@
 import Link from "next/link";
 import { ArrowRight } from "lucide-react";
-import { priceTiers } from "@/lib/content";
+import { priceTiers, home } from "@/lib/content";
 import { formatUsd } from "@/lib/utils";
 import RentCTA from "./RentCTA";
 
@@ -8,21 +8,21 @@ const tierOrder = ["small", "medium", "large"] as const;
 
 const tierCopy = {
   small: {
-    subtitle: "Our most popular starter",
-    fits: "1-bedroom apartment contents",
+    subtitle: home.pricing.smallSubtitle,
+    fits: home.pricing.smallFits,
     hrefSlug: "10x10",
   },
   medium: {
-    subtitle: "The sweet spot",
-    fits: "2-bedroom home or small business",
+    subtitle: home.pricing.mediumSubtitle,
+    fits: home.pricing.mediumFits,
     hrefSlug: "10x15",
   },
   large: {
-    subtitle: "When you need the whole garage",
-    fits: "3+ bedroom home or vehicle + boxes",
+    subtitle: home.pricing.largeSubtitle,
+    fits: home.pricing.largeFits,
     hrefSlug: "10x20",
   },
-} as const;
+};
 
 export default function PricingCards({
   compact = false,
@@ -39,11 +39,10 @@ export default function PricingCards({
         {!compact && (
           <div className="mx-auto mb-12 max-w-2xl text-center">
             <h2 id="pricing-heading" className="font-display text-3xl font-bold md:text-4xl">
-              Straightforward pricing
+              {home.pricing.heading}
             </h2>
             <p className="mt-3 text-ink-700">
-              Every unit climate-controlled. Month-to-month. No move-in fees.
-              No surprise increases.
+              {home.pricing.subheading}
             </p>
           </div>
         )}
@@ -129,9 +128,7 @@ export default function PricingCards({
           })}
         </div>
         <p className="mt-6 text-center text-xs text-ink-500">
-          Prices shown are for Clarence Center. Pricing at Buffalo Niagara is
-          identical unless otherwise noted. First month 50% off available with
-          a 4-month minimum stay.
+          {home.pricing.footerNote}
         </p>
       </div>
     </section>

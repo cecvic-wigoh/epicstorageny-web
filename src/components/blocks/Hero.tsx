@@ -1,16 +1,8 @@
 import Image from "next/image";
 import { Check } from "lucide-react";
 import RentCTA from "./RentCTA";
-import { promo } from "@/lib/content";
+import { promo, home } from "@/lib/content";
 import { images } from "@/lib/images";
-
-const highlights = [
-  "100% climate-controlled",
-  "24/7 gated access",
-  "Month-to-month",
-  "No move-in fees",
-  "Published prices",
-];
 
 export default function Hero() {
   return (
@@ -33,17 +25,12 @@ export default function Hero() {
             {promo.headline} &middot; {promo.terms}
           </p>
           <h1 className="font-display text-4xl font-extrabold tracking-tight text-ink-900 sm:text-5xl md:text-6xl">
-            Straightforward storage.
-            <br className="hidden sm:block" />{" "}
             <span className="bg-gradient-to-r from-brand-600 to-brand-800 bg-clip-text text-transparent">
-              No gimmicks. No surprise rate hikes.
+              {home.hero.heading}
             </span>
           </h1>
           <p className="mx-auto mt-6 max-w-2xl text-lg leading-relaxed text-ink-700 md:text-xl">
-            Brand-new climate-controlled self storage in{" "}
-            <strong className="font-semibold text-ink-900">Clarence Center</strong> and{" "}
-            <strong className="font-semibold text-ink-900">Buffalo</strong>. 24/7 gated access,
-            month-to-month leases, and published prices that actually stay published.
+            {home.hero.subheading}
           </p>
 
           <div className="mt-8 flex flex-col items-center justify-center gap-3 sm:flex-row">
@@ -52,7 +39,7 @@ export default function Hero() {
           </div>
 
           <ul className="mx-auto mt-10 flex max-w-3xl flex-wrap items-center justify-center gap-x-6 gap-y-3 text-sm font-medium text-ink-700">
-            {highlights.map((h) => (
+            {home.hero.highlights.map((h) => (
               <li key={h} className="inline-flex items-center gap-1.5">
                 <Check
                   aria-hidden

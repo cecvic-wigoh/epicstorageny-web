@@ -87,6 +87,8 @@ export default defineConfig({
                 label: "Full Details",
                 ui: { component: "textarea" },
               },
+              { type: "string", name: "eyebrow", label: "Eyebrow Label (e.g. Limited-time offer)" },
+              { type: "string", name: "disclaimer", label: "Disclaimer (e.g. Ask us when you rent...)" },
             ],
           },
         ],
@@ -192,6 +194,15 @@ export default defineConfig({
         ui: { global: true },
         match: { include: "features" },
         fields: [
+          { type: "string", name: "pageHeading", label: "Page Heading" },
+          { type: "string", name: "pageSubheading", label: "Page Subheading", ui: { component: "textarea" } },
+          { type: "string", name: "securityIntro", label: "Security Intro" },
+          { type: "string", name: "accessIntro", label: "Access Intro" },
+          { type: "string", name: "convenienceIntro", label: "Convenience Intro" },
+          { type: "string", name: "cameraHeading", label: "Camera Section Heading" },
+          { type: "string", name: "cameraParagraph1", label: "Camera Paragraph 1", ui: { component: "textarea" } },
+          { type: "string", name: "cameraParagraph2", label: "Camera Paragraph 2", ui: { component: "textarea" } },
+          { type: "string", name: "cameraParagraph3", label: "Camera Paragraph 3", ui: { component: "textarea" } },
           {
             type: "string",
             name: "security",
@@ -211,6 +222,85 @@ export default defineConfig({
             list: true,
           },
         ],
+      },
+
+      // ─── Home Page (global singleton) ────────────────────────────────────
+      {
+        name: "homePage",
+        label: "Home Page",
+        path: "content",
+        format: "json",
+        ui: { global: true },
+        match: { include: "home" },
+        fields: [
+          {
+            type: "object", name: "hero", label: "Hero Section",
+            fields: [
+              { type: "string", name: "heading", label: "Main Heading" },
+              { type: "string", name: "subheading", label: "Subheading", ui: { component: "textarea" } },
+              { type: "string", name: "highlights", label: "Highlight Bullets", list: true },
+            ]
+          },
+          {
+            type: "object", name: "proofPoints", label: "Proof Points Section",
+            fields: [
+              { type: "string", name: "heading", label: "Section Heading" },
+              { type: "string", name: "subheading", label: "Section Subheading" },
+              {
+                type: "object", name: "cards", label: "Cards", list: true,
+                ui: { itemProps: (item: { title?: string }) => ({ label: item?.title ?? "Card" }) },
+                fields: [
+                  { type: "string", name: "title", label: "Card Title" },
+                  { type: "string", name: "body", label: "Card Body", ui: { component: "textarea" } },
+                ]
+              },
+            ]
+          },
+          {
+            type: "object", name: "pricing", label: "Pricing Section",
+            fields: [
+              { type: "string", name: "heading", label: "Section Heading" },
+              { type: "string", name: "subheading", label: "Section Subheading" },
+              { type: "string", name: "footerNote", label: "Footer Note", ui: { component: "textarea" } },
+              { type: "string", name: "smallSubtitle", label: "Small Tier Subtitle" },
+              { type: "string", name: "smallFits", label: "Small Tier Fits" },
+              { type: "string", name: "mediumSubtitle", label: "Medium Tier Subtitle" },
+              { type: "string", name: "mediumFits", label: "Medium Tier Fits" },
+              { type: "string", name: "largeSubtitle", label: "Large Tier Subtitle" },
+              { type: "string", name: "largeFits", label: "Large Tier Fits" },
+            ]
+          },
+        ]
+      },
+
+      // ─── About Page (global singleton) ───────────────────────────────────
+      {
+        name: "aboutPage",
+        label: "About Page",
+        path: "content",
+        format: "json",
+        ui: { global: true },
+        match: { include: "about" },
+        fields: [
+          { type: "string", name: "heroHeading", label: "Hero Heading" },
+          { type: "string", name: "heroSubheading", label: "Hero Subheading", ui: { component: "textarea" } },
+          { type: "string", name: "whyHeading", label: "\"Why\" Section Heading" },
+          { type: "string", name: "whyParagraph1", label: "\"Why\" Paragraph 1", ui: { component: "textarea" } },
+          { type: "string", name: "whyParagraph2", label: "\"Why\" Paragraph 2", ui: { component: "textarea" } },
+          { type: "string", name: "careHeading", label: "\"What We Care About\" Heading" },
+          {
+            type: "object", name: "values", label: "Values List", list: true,
+            ui: { itemProps: (item: { title?: string }) => ({ label: item?.title ?? "Value" }) },
+            fields: [
+              { type: "string", name: "title", label: "Value Title" },
+              { type: "string", name: "body", label: "Value Description", ui: { component: "textarea" } },
+            ]
+          },
+          { type: "string", name: "whereHeading", label: "\"Where to find us\" Heading" },
+          { type: "string", name: "whereBody", label: "\"Where to find us\" Body", ui: { component: "textarea" } },
+          { type: "string", name: "getInTouchHeading", label: "\"Get in touch\" Heading" },
+          { type: "string", name: "getInTouchBody", label: "\"Get in touch\" Body", ui: { component: "textarea" } },
+        ]
       },
     ],
   },

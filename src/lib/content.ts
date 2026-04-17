@@ -17,6 +17,8 @@ import clarenceCenterData from "../../content/locations/clarence-center.json";
 import buffaloNiagaraData from "../../content/locations/buffalo-niagara.json";
 import faqsData from "../../content/faqs.json";
 import featuresData from "../../content/features.json";
+import homeData from "../../content/home.json";
+import aboutData from "../../content/about.json";
 import unit10x10 from "../../content/unit-sizes/10x10.json";
 import unit10x15 from "../../content/unit-sizes/10x15.json";
 import unit10x175 from "../../content/unit-sizes/10x17-5.json";
@@ -53,10 +55,27 @@ export const faqs: readonly Faq[] = faqsData.items;
 // ─── Features ─────────────────────────────────────────────────────────────
 
 export const features = featuresData as {
+  pageHeading: string;
+  pageSubheading: string;
+  securityIntro: string;
+  accessIntro: string;
+  convenienceIntro: string;
+  cameraHeading: string;
+  cameraParagraph1: string;
+  cameraParagraph2: string;
+  cameraParagraph3: string;
   security: readonly string[];
   access: readonly string[];
   convenience: readonly string[];
 };
+
+// ─── Home page ────────────────────────────────────────────────────────────
+
+export const home = homeData;
+
+// ─── About page ───────────────────────────────────────────────────────────
+
+export const about = aboutData;
 
 // ─── Locations ────────────────────────────────────────────────────────────
 

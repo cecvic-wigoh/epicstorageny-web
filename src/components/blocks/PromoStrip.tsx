@@ -13,11 +13,11 @@ export default function PromoStrip() {
             <strong className="font-display font-bold text-brand-50">
               {promo.headline}
             </strong>{" "}
-            &middot; {promo.terms} &middot; Limited-time offer
+            &middot; {promo.terms} &middot; {promo.eyebrow}
           </p>
         </div>
         <p className="text-xs text-brand-100/90">
-          Ask us when you rent. One offer per customer. See terms.
+          {promo.disclaimer}
         </p>
       </div>
     </section>

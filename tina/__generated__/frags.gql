@@ -24,6 +24,8 @@ fragment SettingsParts on Settings {
     headline
     terms
     details
+    eyebrow
+    disclaimer
   }
 }
 
@@ -60,7 +62,67 @@ fragment FaqsParts on Faqs {
 
 fragment FeaturesParts on Features {
   __typename
+  pageHeading
+  pageSubheading
+  securityIntro
+  accessIntro
+  convenienceIntro
+  cameraHeading
+  cameraParagraph1
+  cameraParagraph2
+  cameraParagraph3
   security
   access
   convenience
+}
+
+fragment HomePageParts on HomePage {
+  __typename
+  hero {
+    __typename
+    heading
+    subheading
+    highlights
+  }
+  proofPoints {
+    __typename
+    heading
+    subheading
+    cards {
+      __typename
+      title
+      body
+    }
+  }
+  pricing {
+    __typename
+    heading
+    subheading
+    footerNote
+    smallSubtitle
+    smallFits
+    mediumSubtitle
+    mediumFits
+    largeSubtitle
+    largeFits
+  }
+}
+
+fragment AboutPageParts on AboutPage {
+  __typename
+  heroHeading
+  heroSubheading
+  whyHeading
+  whyParagraph1
+  whyParagraph2
+  careHeading
+  values {
+    __typename
+    title
+    body
+  }
+  whereHeading
+  whereBody
+  getInTouchHeading
+  getInTouchBody
 }

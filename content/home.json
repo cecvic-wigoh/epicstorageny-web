@@ -1,0 +1,33 @@
+{
+  "hero": {
+    "heading": "Straightforward storage. No gimmicks. No surprise rate hikes.",
+    "subheading": "Brand-new climate-controlled self storage in Clarence Center and Buffalo. 24/7 gated access, month-to-month leases, and published prices that actually stay published.",
+    "highlights": [
+      "100% climate-controlled",
+      "24/7 gated access",
+      "Month-to-month",
+      "No move-in fees",
+      "Published prices"
+    ]
+  },
+  "proofPoints": {
+    "heading": "Why renters choose Epic Storage",
+    "subheading": "Three promises that directly answer the questions renters ask us on their first phone call.",
+    "cards": [
+      { "title": "Brand new in 2026", "body": "Clean, bright, and climate-controlled from day one. No decades of wear and tear — just a modern facility built with renters in mind." },
+      { "title": "24/7 gated access", "body": "Perimeter fencing, dusk-to-dawn exterior lighting, motion-triggered interior lighting, individual unit access, and a gate code that's yours alone — any hour of any day." },
+      { "title": "Pricing you can trust", "body": "Published rates, no move-in fees, no admin fees, and no surprise price hikes three months in. What you see is what you pay — in writing, in your lease." }
+    ]
+  },
+  "pricing": {
+    "heading": "Straightforward pricing",
+    "subheading": "Every unit climate-controlled. Month-to-month. No move-in fees. No surprise increases.",
+    "footerNote": "Prices shown are for Clarence Center. Pricing at Buffalo Niagara is identical unless otherwise noted. First month 50% off available with a 4-month minimum stay.",
+    "smallSubtitle": "Our most popular starter",
+    "smallFits": "1-bedroom apartment contents",
+    "mediumSubtitle": "The sweet spot",
+    "mediumFits": "2-bedroom home or small business",
+    "largeSubtitle": "When you need the whole garage",
+    "largeFits": "3+ bedroom home or vehicle + boxes"
+  }
+}

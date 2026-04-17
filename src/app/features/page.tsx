@@ -35,12 +35,10 @@ export default function FeaturesPage() {
             Features
           </p>
           <h1 className="font-display text-4xl font-extrabold tracking-tight md:text-5xl">
-            What a modern storage facility actually looks like.
+            {features.pageHeading}
           </h1>
           <p className="mt-4 text-lg text-ink-700">
-            Brand new in 2026. Climate-controlled. Gated. Lit. Fenced.
-            Month-to-month. And yes — we&rsquo;ll tell you exactly what we
-            don&rsquo;t have too.
+            {features.pageSubheading}
           </p>
         </div>
       </section>
@@ -51,17 +49,17 @@ export default function FeaturesPage() {
             <FeatureGrid
               title="Security"
               items={features.security}
-              intro="Fence, gate, lighting, and keys you control."
+              intro={features.securityIntro}
             />
             <FeatureGrid
               title="Access"
               items={features.access}
-              intro="Come and go any hour of any day."
+              intro={features.accessIntro}
             />
             <FeatureGrid
               title="Convenience"
               items={features.convenience}
-              intro="Honest lease terms and no move-in fees."
+              intro={features.convenienceIntro}
             />
           </div>
 
@@ -76,26 +74,16 @@ export default function FeaturesPage() {
       <section className="bg-brand-50 py-16 md:py-20">
         <div className="container-page mx-auto max-w-3xl">
           <h2 className="font-display text-2xl font-bold md:text-3xl">
-            About the cameras: we&rsquo;re telling you the truth.
+            {features.cameraHeading}
           </h2>
           <p className="mt-4 text-ink-700">
-            Most storage websites advertise &ldquo;digital video
-            surveillance&rdquo; whether they actually have it or not.
-            We&rsquo;re not going to. Epic Storage is a brand-new facility as
-            of 2026, and cameras are on our installation roadmap — but
-            they&rsquo;re not there yet.
+            {features.cameraParagraph1}
           </p>
           <p className="mt-4 text-ink-700">
-            Here&rsquo;s what we built instead: a fully fenced perimeter, a
-            gated entrance that requires your personal tenant code, dusk-to-
-            dawn exterior lighting, and motion-triggered interior lighting in
-            the climate-controlled units and common areas. Every unit is also
-            individually keyed — only you open yours.
+            {features.cameraParagraph2}
           </p>
           <p className="mt-4 text-ink-700">
-            When the cameras are installed, we&rsquo;ll update this page.
-            Until then, we&rsquo;d rather you choose us knowing what
-            you&rsquo;re getting than regret it later.
+            {features.cameraParagraph3}
           </p>
         </div>
       </section>
