@@ -1,0 +1,66 @@
+fragment SettingsParts on Settings {
+  __typename
+  site {
+    __typename
+    legalName
+    brand
+    tagline
+    description
+  }
+  contact {
+    __typename
+    phone
+    email
+  }
+  hours {
+    __typename
+    officeLabel
+    officeDetail
+    gateLabel
+    gateDetail
+  }
+  promo {
+    __typename
+    headline
+    terms
+    details
+  }
+}
+
+fragment LocationParts on Location {
+  __typename
+  name
+  shortName
+  street
+  city
+  zip
+  blurb
+  areasServed
+}
+
+fragment UnitSizeParts on UnitSize {
+  __typename
+  label
+  dims
+  area
+  monthly
+  description
+  features
+  idealFor
+}
+
+fragment FaqsParts on Faqs {
+  __typename
+  items {
+    __typename
+    q
+    a
+  }
+}
+
+fragment FeaturesParts on Features {
+  __typename
+  security
+  access
+  convenience
+}
