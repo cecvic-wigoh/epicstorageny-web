@@ -1,7 +1,7 @@
 {
   "hero": {
     "heading": "Straightforward storage. No gimmicks. No surprise rate hikes.",
-    "subheading": "Brand-new climate-controlled self storage in Clarence Center and Buffalo. 24/7 gated access, month-to-month leases, and published prices that actually stay published.",
+    "subheading": "Brand-new standard & climate-controlled self storage in Clarence Center and Buffalo. 24/7 gated access, month-to-month leases, and published prices that actually stay published.",
     "highlights": [
       "100% climate-controlled",
       "24/7 gated access",
@@ -14,9 +14,18 @@
     "heading": "Why renters choose Epic Storage",
     "subheading": "Three promises that directly answer the questions renters ask us on their first phone call.",
     "cards": [
-      { "title": "Brand new in 2026", "body": "Clean, bright, and climate-controlled from day one. No decades of wear and tear — just a modern facility built with renters in mind." },
-      { "title": "24/7 gated access", "body": "Perimeter fencing, dusk-to-dawn exterior lighting, motion-triggered interior lighting, individual unit access, and a gate code that's yours alone — any hour of any day." },
-      { "title": "Pricing you can trust", "body": "Published rates, no move-in fees, no admin fees, and no surprise price hikes three months in. What you see is what you pay — in writing, in your lease." }
+      {
+        "title": "Brand new in 2026",
+        "body": "Clean, bright, and climate-controlled from day one. No decades of wear and tear — just a modern facility built with renters in mind."
+      },
+      {
+        "title": "24/7 gated access",
+        "body": "Perimeter fencing, dusk-to-dawn exterior lighting, motion-triggered interior lighting, individual unit access, and a gate code that's yours alone — any hour of any day."
+      },
+      {
+        "title": "Pricing you can trust",
+        "body": "Published rates, no move-in fees, no admin fees, and no surprise price hikes three months in. What you see is what you pay — in writing, in your lease."
+      }
     ]
   },
   "pricing": {
